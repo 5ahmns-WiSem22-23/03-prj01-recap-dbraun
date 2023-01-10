@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rb;
-
-    SpriteRenderer sr;
+    SpriteRenderer spriteR;
+    Rigidbody2D rigidB;
 
     [SerializeField]
     Manager m;
@@ -16,42 +15,39 @@ public class Player : MonoBehaviour
     Sprite collectedSprite;
 
     [SerializeField]
-    float kmh;
+    float speed;
 
     bool carryingTile;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        rigidB = GetComponent<Rigidbody2D>();
+        spriteR = GetComponent<SpriteRenderer>();
 
-        sr.sprite = standardSprite;
+        spriteR.sprite = standardSprite;
 
     }
 
    
     private void FixedUpdate()
     {
-        // Die Rotation wird über die Rotate Funktion gemanaget
-        transform.Rotate(0, 0, -Input.GetAxis("Horizontal")* (kmh/4));
+        transform.Rotate(0, 0, -Input.GetAxis("Horizontal")* (speed/4));
 
-        // Die Bewegung nach vorne und hinten wird gemanaget
-        rb.velocity = transform.rotation * new Vector2(0, Input.GetAxis("Vertical") * kmh);
+        rigidB.velocity = transform.rotation * new Vector2(0, Input.GetAxis("Vertical") * speed);
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Es wird überprüft, mit welchem Objekt kollidiert wurde 
         if(collision.CompareTag("Tile"))
         {
-            sr.sprite = collectedSprite;
+            spriteR.sprite = collectedSprite;
             Destroy(collision.gameObject);
             carryingTile = true;
         }
         else if (collision.CompareTag("Droppoint") && carryingTile)
         {
-            sr.sprite = standardSprite;
+            spriteR.sprite = standardSprite;
             m.SpawnTile();
             Manager.tileCounter++;
             carryingTile = false;
