@@ -1093,7 +1093,7 @@ Transform:
   m_GameObject: {fileID: 1086596740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m: {fileID: 1315433632}
   standardSprite: {fileID: 21300000, guid: 9afbc740dd9e0534dbd2ac3ef0366db2, type: 3}
   collectedSprite: {fileID: 21300000, guid: 516985d540a2fb44db7b499554046d28, type: 3}
-  kmh: 5
+  speed: 12
 --- !u!1 &1110978403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 1315433633}
   - component: {fileID: 1315433632}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Gamemanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1839,8 +1839,8 @@ GameObject:
   - component: {fileID: 1413110416}
   - component: {fileID: 1413110418}
   m_Layer: 0
-  m_Name: Droppoint
-  m_TagString: Droppoint
+  m_Name: Post
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

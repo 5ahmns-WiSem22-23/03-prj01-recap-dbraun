@@ -39,13 +39,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Tile"))
+        if(collision.CompareTag("Paket"))
         {
             spriteR.sprite = collectedSprite;
             Destroy(collision.gameObject);
             carryingTile = true;
         }
-        else if (collision.CompareTag("Droppoint") && carryingTile)
+        else if (collision.CompareTag("Post") && carryingTile)
         {
             spriteR.sprite = standardSprite;
             m.SpawnTile();

@@ -5,30 +5,19 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     [SerializeField]
-    private float minRange;
-
+    private float rangeMin;
     [SerializeField]
-    private float maxRange;
-
+    private float rangeMax;
     [SerializeField]
     private GameObject tile;
-
     [SerializeField]
     Text tileCountText;
-
     public static int tileCounter;
-
     float time;
-
     [SerializeField]
     float maxTime;
-
-
     [SerializeField]
     Text timeText;
-
-
-
     void Start()
     {
         SpawnTile();
@@ -37,27 +26,20 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         tileCountText.text = tileCounter.ToString();
-        timeText.text = "Zeit: " + Mathf.Round(maxTime - time).ToString();
 
-        // Timer erstellen/einstellen
+        timeText.text = "Zeit: " + Mathf.Round(maxTime - time).ToString();
         time += Time.deltaTime;
 
-        //Nach Ablauf der Zeit wird das Spiel neu gestartet
         if (time >= maxTime)
         {
             SceneManager.LoadScene(0);
             tileCounter = 0;
         }
 
-        
-
-
     }
-
-
     public void SpawnTile()
     {
-        // Der Bereich des gespawnten Objekts wird zufällig auserwählt
-        Instantiate(tile, new Vector3(Random.Range(minRange, maxRange), Random.Range(minRange, maxRange), 0), Quaternion.identity);
+
+        Instantiate(tile, new Vector3(Random.Range(rangeMin, rangeMax), Random.Range(rangeMin, rangeMax), 0), Quaternion.identity);
     }
 }
