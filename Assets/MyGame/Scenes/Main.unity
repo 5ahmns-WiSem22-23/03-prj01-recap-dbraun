@@ -1510,8 +1510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5434246f3e3844134abd3452ca6eadb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRange: -8
-  maxRange: 8
+  rangeMin: 0
+  rangeMax: 0
   tile: {fileID: 7048915301009360052, guid: e7f4ad72e048b4d07a0cd14ba6335040, type: 3}
   tileCountText: {fileID: 439899016}
   maxTime: 60
@@ -1840,7 +1840,7 @@ GameObject:
   - component: {fileID: 1413110418}
   m_Layer: 0
   m_Name: Post
-  m_TagString: Untagged
+  m_TagString: Post
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
