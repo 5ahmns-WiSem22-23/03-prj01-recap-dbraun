@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5434246f3e3844134abd3452ca6eadb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeMin: 0
+  rangeMin: -8
   rangeMax: 8
   tile: {fileID: 7048915301009360052, guid: e7f4ad72e048b4d07a0cd14ba6335040, type: 3}
   tileCountText: {fileID: 439899016}
