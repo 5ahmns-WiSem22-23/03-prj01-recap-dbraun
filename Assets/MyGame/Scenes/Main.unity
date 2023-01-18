@@ -1145,7 +1145,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1086596745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeMin: 0
-  rangeMax: 0
+  rangeMax: 8
   tile: {fileID: 7048915301009360052, guid: e7f4ad72e048b4d07a0cd14ba6335040, type: 3}
   tileCountText: {fileID: 439899016}
   maxTime: 60
